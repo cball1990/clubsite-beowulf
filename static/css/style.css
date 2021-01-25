@@ -1,0 +1,224 @@
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        color: #d37600;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/dark-website-background.jpg);
+        background-repeat: repeat-y;
+        background-size: cover;
+        background-position: top center;
+        width: 100%;
+    }
+    
+    .container-coloured {
+        padding: 10px;
+    }
+    
+    hr {
+        background-color: #d37600;
+    }
+    /*---------------------------------------------------------------nav/header----------------------*/
+    
+    .main-banner {
+        background-image: url(images/SpaceMarineCoverbig.jpg);
+        height: 850px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-bottom: solid 2px #d37600;
+    }
+    
+    nav {
+        border-bottom: solid 2px #63fcda;
+    }
+    
+    nav ul li a {
+        color: #66FCF1;
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.8rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        top: 29px;
+    }
+    
+    .nav-img {
+        position: unset;
+        margin-left: 5px;
+        margin-right: 5px;
+        float: left;
+        padding: 0px;
+    }
+    
+    .nav-img:hover {
+        padding: 0px;
+    }
+    
+    nav ul li a:hover {
+        color: #46b8b0;
+        padding: 5px;
+    }
+    
+    .nav-fb {
+        color: #eb8400;
+        top: -16px;
+        position: relative;
+        margin: 10px;
+    }
+    
+    @media only screen and (max-width: 991px) {
+        .nav-fb {
+            color: #eb8400;
+            top: -16px;
+            position: relative;
+            left: -15px;
+        }
+    }
+    
+    .fa-bars {
+        color: #eb8400;
+    }
+    /*-------------------------------------------------text----------------------------------*/
+    
+    .hero-text {
+        text-align: left;
+        position: absolute;
+        top: 50%;
+        left: 24%;
+        transform: translate(-26%, -38%);
+    }
+    
+    .hero-text-main {
+        line-height: 140%;
+        color: #d37600;
+        font-size: 5rem;
+    }
+    
+    .hero-text-subheading {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #45A29E;
+    }
+    
+    .hero-text-content {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #45A29E;
+        line-height: 170%;
+    }
+    
+    .main-text {
+        font-family: 'Ubuntu', sans-serif;
+        color: #45A29E;
+        font-size: 1rem;
+        line-height: 132%;
+        line-height: 143%;
+    }
+    
+    .quote-text {
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: #c8cece;
+        line-height: 248%;
+        text-align: center;
+        position: relative;
+        top: 22%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .hero-text {
+            left: 32%;
+            transform: translate(-46%, -38%);
+        }
+        .hero-text-main {
+            line-height: 140%;
+            color: #d37600;
+            font-size: 3rem;
+        }
+    }
+    /*------------------------------------------------------------forms-------------------------------------------*/
+    
+    .login-signup {
+        font-family: 'Cardo', sans-serif;
+        color: #66FCF1;
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    .b-left {
+        border-left: solid 2px #d37600;
+    }
+    
+    @media only screen and (max-width: 991px) {
+        .b-left {
+            border-left: none;
+            border-top: solid 2px #d37600;
+        }
+    }
+    
+    input {
+        border-radius: 5px;
+        border-color: #d37600;
+        border-width: 4px;
+    }
+    /*------------------------------------------------------------home--------------------------------------------------*/
+    
+    .home-sw-img {
+        width: 95%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        border: solid 1px #31a29e;
+        position: relative;
+        top: 70px;
+    }
+    
+    .home-sw-img:hover {
+        transform: scale(1.2);
+    }
+    
+    @media only screen and (max-width: 605px) {
+        .home-sw-img {
+            width: 85%;
+            top: 0px;
+        }
+    }
+    
+    @media only screen and (max-width: 991px) {
+        .home-sw-img {
+            width: 85%;
+            top: 0px;
+        }
+    }
+    
+    .img-bg {
+        background-image: url(images/robouteguilliman1.jpg);
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        border-top: solid 2px #d37600;
+        border-bottom: solid 2px #d37600;
+    }
+    /*
+darkest #1F2833 
+pinkeyblue #C5C6C7 
+lightest #66FCF1 
+middleblue #45A29E 
+*/

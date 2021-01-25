@@ -1,0 +1,49 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% if error %}
+            <p class="main-text">{{ errors }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+        <br>
+            <h2>Add An Event:</h2>
+            <form method='POST' action="{% url 'addevent' %}">
+                {% csrf_token %}
+                <label class="main-text">Event Name:  </label><br>
+                <input type="text" name="title"/><br>
+                <label class="main-text">Date:  </label><br>
+                <input type="text" name="date"/><br>
+                <label class="main-text">Time:  </label><br>
+                <input type="text" name="time"/><br>
+                <label class="main-text">Description:  </label><br>
+                <textarea rows='10' cols="30" name="description"></textarea><br>
+                <input type ="submit" value="add">
+            </form>
+        </div>
+        <div class="col-sm-12 col-md-8">
+        <br>
+            <h2>Manage Events:</h2>
+            <br>
+            {% for event in events %}
+                <p class="main-text"><strong><span>Event Name: {{ event.title }}  ,</span>
+                <span>Date: {{ event.date }}  ,</span>
+                <span>Time: {{ event.time }}  </span></strong></p>
+                <span>
+                    <form id="delete{{ event.id }}" method="POST" action="{% url 'deleteevent' event.id %}">
+                        {% csrf_token %}
+                    </form>
+                    <a href="javascript:{document.getElementById('delete{{ event.id }}').submit()}"><button class="btn btn-danger btn-sm">Delete</button></a>
+                </span>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

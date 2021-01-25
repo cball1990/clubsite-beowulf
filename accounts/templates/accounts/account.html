@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container container-coloured">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+        <br>
+            <h1>Welcome Brother</h1>
+        <br>
+        </div>
+    </div>
+        <div class="row event-container">
+            {% for img in userimg %}
+                <div class="col-sm-12 col-md 7">
+                <br>
+                    <img class="profile-img" src="{{ img.profilePic.url }}">
+                <br>
+                </div> 
+                <div class="col-sm-12 col-md-5">
+                <br>
+                    <h4>Change Image:</h4>
+                    <form id="updateimage{{ img.id }}" method='POST' action="{% url 'updateimage' img.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label class="main-text">Upload an image/Avatar of yourself:  </label><br>
+                    <input  class="main-text" type="file" name="image" />
+                    </form>
+                    <br>
+                    <a href="javascript:{document.getElementById('updateimage{{ img.id }}').submit()}"><button class="btn btn-primary btn-sm">Update</button></a>
+                <br>
+                <br>
+                </div>
+            {% endfor %}
+
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="container-fluid event-banner">
+</div>
+<div class="container container-coloured">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+        <br>
+            <h1>Events</h1>
+        <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+        <br>
+            <p class="main-text">Find details of our events and themed evenings here. Painting competitions, Crusade nights
+            Special missions, Hobby nights and many others things are all organised for you to join in with if you desire,
+            or you can just come and play a normal game instead. Feel free to join our discord server to organise games,
+            get more details and join in with the general chat. </p>
+        <br>
+        </div>
+    </div>
+        {% for event in events %}
+        <div class="row event-container">
+            <div class="col-sm-12">
+                <br>
+                <h2>{{ event.title }}</h2>
+                <br>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <span class="main-text"><strong>Date:</strong> <span class="italic-text">{{ event.date }}</span></span><br>
+                <span class="main-text"><strong>Time: </strong> <span class="italic-text">{{ event.time }}</span></span>
+                <br>
+                <br>
+            </div>
+            <div class="col-sm-12 col-md-9">
+                <p class="main-text">
+                    {{ event.description }}
+                </p>
+                <br>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<br>
+<br>
+<p class="main-text" style="text-align: center; font-size: 1.5rem;">
+            {% if error %}
+            {{ error }}
+            {% endif %}
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-6 b-left">
+            <div class="login-signup">
+            <h3> Login </h3>
+                <form class="pl-3" action="{% url 'login' %}" method='POST'>
+                {% csrf_token %}
+                    Email:
+                    <br />
+                    <input type="email" name="email" />
+                    <br />
+                    Password:
+                    <br />
+                    <input type="password" name="password" />
+                    <br />
+                    <br>
+                    <input class="btn btn-info" type="submit" value="Login" />
+                </form>
+                <br>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6 b-left">
+            <div class="login-signup">
+                <h3> Sign up </h3>
+                <form class="pl-3" action="{% url 'signup' %}" method='POST'>
+                {% csrf_token %}
+                    Email:
+                    <br />
+                    <input type="email" name="email" />
+                    <br />
+                    Password:
+                    <br />
+                    <input type="password" name="password1" />
+                    <br />
+                    Re-type Password:
+                    <br />
+                    <input type="password" name="password2" />
+                    <br>
+                    Choose a Username:
+                    <br />
+                    <input type="text" name="username" /><br>
+                    <br>
+                    <input class="btn btn-info" type="submit" value="signup" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
