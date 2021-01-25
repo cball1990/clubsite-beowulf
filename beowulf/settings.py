@@ -118,16 +118,26 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=94608000'
 }
 
+AWS_STORAGE_BUCKET_NAME = 'club-beowulf'
+AWS_S3_REGION_NAME = 'eu-west-2'
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'beowulf/static/')
+    os.path.join(BASE_DIR, 'static')
 ]
+#STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATICFILES_LOCATION = 'static'
 
-STATIC_ROOT=os.path.join(BASE_DIR, 'static')
-STATIC_URL ='/static/'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
-MEDIA_URL='/media/'
 
 django_heroku.settings(locals(), staticfiles=False, test_runner=False)
 

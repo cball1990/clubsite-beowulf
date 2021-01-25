@@ -21,6 +21,11 @@
         padding: 10px;
     }
     
+    .border-t-b {
+        border-top: solid 2px #d37600;
+        border-bottom: solid 2px #d37600;
+    }
+    
     hr {
         background-color: #d37600;
     }
@@ -249,6 +254,37 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    /*-----------------------------------------------------------findus---------------------------------------------------------*/
+    
+    .full-border-img {
+        border: solid 2px #d37600;
+        width: 90%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .findus-banner {
+        background-image: url(images/40kmap1.jpg);
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-bottom: solid 2px #d37600;
+    }
+    
+    .quote-text-2 {
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: #c8cece;
+        line-height: 248%;
+        text-align: center;
+        position: relative;
+        top: 54%;
     }
     /*
 darkest #1F2833 
